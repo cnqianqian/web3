@@ -2,10 +2,141 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0;url=http://84.32.248.136:3000/">
-    <title>Redirecting...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>项目展示页面</title>
+    <style>
+        /* 全局样式 */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .project {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .project:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .project a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .project img {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .project-1 {
+            background: rgba(76, 175, 80, 0.2);
+        }
+
+        .project-2 {
+            background: rgba(158, 158, 158, 0.2);
+            cursor: not-allowed;
+        }
+
+        .project-2 h2,
+        .project-2 p {
+            opacity: 0.6;
+        }
+
+        .ad {
+            margin-top: 40px;
+            font-size: 1.2rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .ad a {
+            color: #4CAF50;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .ad a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-    <p>If you are not redirected, <a href="http://84.32.248.136:3000/">click here</a>.</p>
+    <div class="container">
+        <h1>项目展示</h1>
+
+        <!-- 项目1：Solana 代币限时回购 -->
+        <div class="project project-1">
+            <a href="http://84.32.248.136:3000/">
+                <img src="https://via.placeholder.com/800x400" alt="Solana 代币限时回购">
+                <h2>Solana 代币限时回购</h2>
+                <p>
+                    参与 Solana 生态代币限时回购活动，享受超值优惠！<br>
+                    活动时间有限，立即点击了解更多详情。
+                </p>
+            </a>
+        </div>
+
+        <!-- 项目2：Web3 彩票大派送（未开放） -->
+        <div class="project project-2">
+            <img src="https://via.placeholder.com/800x400" alt="Web3 彩票大派送">
+            <h2>Web3 彩票大派送</h2>
+            <p>
+                即将上线！参与 Web3 彩票活动，赢取丰厚奖励。<br>
+                敬请期待，更多惊喜等你来发现！
+            </p>
+        </div>
+
+        <!-- 招商广告 -->
+        <div class="ad">
+            <h2>更多项目敬请期待</h2>
+            <p>
+                我们正在筹备更多精彩项目，欢迎合作！<br>
+                如果您有优质项目或合作意向，请联系我们。
+            </p>
+            <a href="mailto:contact@example.com">contact@example.com</a>
+        </div>
+    </div>
 </body>
 </html>
