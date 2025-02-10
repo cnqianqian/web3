@@ -10,133 +10,128 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background: url('background.jpg') no-repeat center center fixed;
-            background-size: cover;
+            background: linear-gradient(135deg, #ffcc00, #ff6699, #66ccff);
             color: #fff;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            flex-direction: column;
+            text-align: center;
         }
 
         .container {
             max-width: 1200px;
             padding: 40px;
-            text-align: center;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            font-weight: bold;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         h2 {
-            font-size: 2rem;
-            margin-bottom: 10px;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: bold;
+			color: #ff6699; /* 字体颜色：蓝色 */
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
         }
 
-        p {
-            font-size: 1.1rem;
-            line-height: 1.6;
+        .banner {
+            background: url('a1.jpg') no-repeat center center;
+            background-size: cover;
+            
+            z-index: -1; /* 使背景图不遮挡内容 */
+			
+            padding: 20px;
+            border-radius: 10px;
+            font-size: clamp(1rem, 4vw, 1.5rem);
+            font-weight: bold;
             margin-bottom: 20px;
         }
 
         .project {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.7); /* 半透明背景 */
             border-radius: 10px;
-            padding: 20px;
+            padding: 40px;
             margin: 20px 0;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             backdrop-filter: blur(10px);
+            color: #333;
+            position: relative;
+            overflow: hidden;
         }
 
-        .project:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        /* 设置背景图片，并且不影响大小 */
+        .project::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('a1.jpg');
+            background-position: center;
+            background-size: cover;
+            opacity: 0.2;  /* 设置透明度 */
+            z-index: -1; /* 使背景图不遮挡内容 */
         }
 
-        .project a {
-            text-decoration: none;
-            color: inherit;
+        .project:hover {	
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
         }
 
         .project img {
-            width: 100%;
-            max-width: 400px;
-            height: auto;
-            border-radius: 10px;
+            display: none; /* 隐藏原始图片 */
+        }
+
+        .project h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .project p {
+            font-size: 1.1rem;
+			font-style: italic; /* 斜体效果 */
+            line-height: 1.6;
+			color: #ffff00; /* 字体颜色：蓝色 */
+
             margin-bottom: 20px;
         }
 
-        .project-1 {
-            background: rgba(76, 175, 80, 0.2);
-        }
-
-        .project-2 {
-            background: rgba(158, 158, 158, 0.2);
-            cursor: not-allowed;
-        }
-
-        .project-2 h2,
-        .project-2 p {
-            opacity: 0.6;
-        }
-
-        .ad {
-            margin-top: 40px;
-            font-size: 1.2rem;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 10px;
-        }
-
-        .ad a {
-            color: #4CAF50;
-            text-decoration: none;
+        .cta {
+            margin-top: 20px;
+            padding: 15px;
+            font-size: 1.5rem;
             font-weight: bold;
+            color: #fff;
+            background: linear-gradient(90deg, #ff6699, #ffcc00);
+            border-radius: 10px;
+            text-decoration: none;
         }
 
-        .ad a:hover {
-            text-decoration: underline;
+        .footer {
+            margin-top: 20px;
+            font-size: 1rem;
+            color: #fff;
         }
     </style>
 </head>
 <body>
+    <div class="banner">🎉 活动进行中！丰厚福利等你来拿！ 🎉</div>
     <div class="container">
-        <h1>项目展示</h1>
-
-        <!-- 项目1：Solana 代币限时回购 -->
-        <div class="project project-1">
-            <a href="http://84.32.248.136:3000/">
-                <img src="https://via.placeholder.com/400x800" alt="Solana 代币限时回购">
-                <h2>Solana 代币限时回购</h2>
-                <p>
-                    参与 Solana 生态代币限时回购活动，享受超值优惠！<br>
-                    活动时间有限，立即点击了解更多详情。
-                </p>
-            </a>
+        <h1>🔥 精彩项目展示 🔥</h1>
+        
+        <div class="project" background-image: url('a1.jpg')>
+            <h2>Solana 代币限时回购</h2>
+            <p>参与 Solana 生态代币限时回购活动，享受超值优惠！<br>活动时间有限，立即点击了解更多详情。</p>
+            <a href="http://84.32.248.136:3000/" class="cta">立即参与</a>
         </div>
 
-        <!-- 项目2：Web3 彩票大派送（未开放） -->
-        <div class="project project-2">
-            <img src="https://via.placeholder.com/400x800" alt="Web3 彩票大派送">
+        <div class="project" background-image: url('b1.jpg')>
             <h2>Web3 彩票大派送</h2>
-            <p>
-                即将上线！参与 Web3 彩票活动，赢取丰厚奖励。<br>
-                敬请期待，更多惊喜等你来发现！
-            </p>
-        </div>
-
-        <!-- 招商广告 -->
-        <div class="ad">
-            <h2>更多项目敬请期待</h2>
-            <p>
-                我们正在筹备更多精彩项目，欢迎合作！<br>
-                如果您有优质项目或合作意向，请联系我们。
-            </p>
-            <a href="mailto:contact@example.com">contact@example.com</a>
+            <p>即将上线！参与 Web3 彩票活动，赢取丰厚奖励。敬请期待，更多惊喜等你来发现！</p>
         </div>
     </div>
+    <div class="footer">© 2025 精彩项目加盟 | <a href="https://t.me/cn_qianqian">加入Telegram群交流🌐</a></div>
 </body>
 </html>
